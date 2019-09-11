@@ -22,6 +22,7 @@ export default class JokeList extends Component {
 			jokes.push({ id: uuid(), text: res.data.joke, votes: 0 });
 		}
 		this.setState({ jokes: jokes });
+		window.localStorage.setItem('jokes', JSON.stringify(jokes));
 	}
 
 	handleVote(id, delta) {
